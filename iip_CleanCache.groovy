@@ -18,6 +18,7 @@ node {
       println ""
       println job.name
       
+  
       // Job has a SubversionSCM-Configuration
       def newSvnPath = [][]
 
