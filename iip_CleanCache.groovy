@@ -1,4 +1,5 @@
-node('slave-agent_ea62956482df') {
+//node('slave-agent_ea62956482df') {
+node {
 
   state('Bootstrap'){
     // Access to the Hudson Singleton
@@ -42,5 +43,5 @@ node('slave-agent_ea62956482df') {
       }
     }
   }
-  
+
 }
