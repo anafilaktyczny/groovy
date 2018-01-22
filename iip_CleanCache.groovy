@@ -24,25 +24,6 @@ node('slave-agent_ea62956482df') {
         //For every Subversion-Location
         println "-   $it.remote"
         println "-   $it"
-        /*
-        if (it.remote =~ /$urlFilter/) {
-          //SVN-Path contains the given Path
-          newRemote = it
-          match =  it.remote =~ /$oldBranch/
-          
-          if(match) {
-            newRemote = match.replaceFirst(newBranch)
-            println " -> $newRemote"
-            newSvnPath.add(it.withRemote(newRemote))
-          } else {
-            println "    Doesn't match oldBranch"
-            newSvnPath.add(it)
-          }
-
-        } else {
-          println "    Doesn't match urlFilter"
-        }
-        */
       }
     }
   
@@ -61,4 +42,5 @@ node('slave-agent_ea62956482df') {
       }
     }
   }
+  
 }
