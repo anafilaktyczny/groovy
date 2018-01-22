@@ -1,4 +1,4 @@
-node {
+node('slave-agent_ea62956482df') {
   // Remove obsolete files based on atime timestamp.
   if (params.REMOVE_OBSOLETES){
     stage('Remove obsolete files.') {
