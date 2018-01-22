@@ -1,7 +1,7 @@
 //node('slave-agent_ea62956482df') {
 node {
 
-  state('Bootstrap'){
+  stage('Bootstrap'){
     // Access to the Hudson Singleton
     hudsonInstance = hudson.model.Hudson.instance
 
