@@ -18,15 +18,11 @@ node {
     //if (job.scm instanceof SubversionSCM) { 
       println ""
       println job.name
-      
-  
-      // Job has a SubversionSCM-Configuration
-      def newSvnPath = [][]
 
       job.scm.locations.each{
         //For every Subversion-Location
-        println "-   $it.remote"
-        println "-   $it"
+        println "-   " + $it.remote
+        println "-   " + $it
       }
     }
   
