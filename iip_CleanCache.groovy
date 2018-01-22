@@ -8,9 +8,9 @@ node('slave-agent_ea62956482df') {
     allItems = hudsonInstance.items
     chosenJobs = allItems.findAll{job -> job.name =~ /$jobFilter/}
 
-// Do work and create the result table
-chosenJobs.each { job ->
-  if(!(job instanceof hudson.model.ExternalJob)) {
+    // Do work and create the result table
+    chosenJobs.each { job ->
+    //if(!(job instanceof hudson.model.ExternalJob)) {
 
     // No SCM-Configuration possible for External Jobs!
     //if (job.scm instanceof SubversionSCM) { 
