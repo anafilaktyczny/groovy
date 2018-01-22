@@ -3,6 +3,7 @@ node {
 
   stage('Bootstrap'){
     // Access to the Hudson Singleton
+    sh "env"
     hudsonInstance = hudson.model.Hudson.instance
 
     // Retrieve matching jobs
