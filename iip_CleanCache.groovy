@@ -2,10 +2,14 @@ node{
   // ${GERRIT_SCHEME}://${GERRIT_HOST}:${GERRIT_PORT}/oip/core/pipeline
   stage("INfo"){
 
-    Jenkins.instance.getAllItems(Job).each{
+    Jenkins.instance.getAllItems(Job).each{ job ->
+
+      println(job.name)
+/*
       def jobBuilds=it.getBuilds()
       //for each of such jobs we can get all the builds (or you can limit the number at your convenience)
         jobBuilds.each { build ->
+
           def runningSince = groovy.time.TimeCategory.minus( new Date(), build.getTime() )
           def currentStatus = build.buildStatusSummary.message
           def cause = build.getCauses()[0] //we keep the first cause
@@ -18,11 +22,11 @@ node{
           // You can get all the information available for build parameters.
           def parameters = build.getAction(ParametersAction)?.parameters
           parameters.each {
-            println "Type: ${it.class} Name: ${it.name}, Value: ${it.dump()}" 
-          
+            println "Type: ${it.class} Name: ${it.name}, Value: ${it.dump()}"
           }
         }
     }
+    */
   }
 
 
