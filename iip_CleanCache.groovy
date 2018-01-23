@@ -2,7 +2,7 @@ node{
   // ${GERRIT_SCHEME}://${GERRIT_HOST}:${GERRIT_PORT}/oip/core/pipeline
 
   stage("INfo"){
-    println (scm.getUserRemoteConfigs());
+    println (scm.vvv);
     repository = scm.getRepositories();
     println(repository.aa)
     println(scm.GIT_BRANCH)
