@@ -4,7 +4,7 @@ node{
 
     Jenkins.instance.getAllItems(Job).each{ job ->
 
-      println(job.name)
+      println(job.scm)
     }
 /*
       def jobBuilds=it.getBuilds()
