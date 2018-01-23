@@ -1,8 +1,9 @@
 node{
   // ${GERRIT_SCHEME}://${GERRIT_HOST}:${GERRIT_PORT}/oip/core/pipeline
+  println (scm.getUserRemoteConfigs());
+
   stage("INfo"){
 
-    
   }
 
 
