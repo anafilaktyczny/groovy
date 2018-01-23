@@ -5,6 +5,7 @@ node{
     Jenkins.instance.getAllItems(Job).each{ job ->
 
       println(job.name)
+    }
 /*
       def jobBuilds=it.getBuilds()
       //for each of such jobs we can get all the builds (or you can limit the number at your convenience)
