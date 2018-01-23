@@ -4,7 +4,10 @@ node{
   stage("INfo"){
     println (scm.vvv);
     repository = scm.getRepositories();
-    println(repository.aa)
+    println(GIT_BRANCH)
+    
+    println(repository.GIT_BRANCH)
+
     println(scm.GIT_BRANCH)
   }
 
