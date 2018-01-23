@@ -2,11 +2,19 @@ node{
   // ${GERRIT_SCHEME}://${GERRIT_HOST}:${GERRIT_PORT}/oip/core/pipeline
   stage("INfo"){
 
+    // Access to the Hudson Singleton
+    hudsonInstance = hudson.model.Hudson.instance
+
+    // Retrieve matching jobs
+    allItems = hudsonInstance.items
+    chosenJobs = allItems.findAll{job -> job.name =~ /GroovyShellTest/}
+
+    println chosenJobs
+/*
     Jenkins.instance.getAllItems(Job).each{ job ->
 
       println(job.scm)
     }
-/*
       def jobBuilds=it.getBuilds()
       //for each of such jobs we can get all the builds (or you can limit the number at your convenience)
         jobBuilds.each { build ->
