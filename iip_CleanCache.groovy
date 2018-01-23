@@ -3,6 +3,9 @@ node{
 
   stage("INfo"){
     println (scm.getUserRemoteConfigs());
+    scm.locations.each{
+      println "-   $it.remote"
+    }
   }
 
 
