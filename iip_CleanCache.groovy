@@ -4,7 +4,6 @@ node{
   stage("INfo"){
     
     repository = scm.getRepositories();
-    println(GIT_BRANCH)
 
     println(repository.GIT_BRANCH)
     println(scm.GIT_BRANCH)
