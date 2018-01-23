@@ -4,7 +4,8 @@ node{
   stage("INfo"){
     println (scm.getUserRemoteConfigs());
     repository = scm.getRepositories().get(0).getName();
-    println(repository)
+    println(repository.getName())
+    println(scm.GIT_BRANCH)
   }
 
 
