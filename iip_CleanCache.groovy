@@ -9,7 +9,7 @@ node{
     allItems = hudsonInstance.items
     chosenJobs = allItems.findAll{job -> job.name =~ /GroovyShellTest/}
 
-    println chosenJobs
+    println chosenJobs.name
 /*
     Jenkins.instance.getAllItems(Job).each{ job ->
 
