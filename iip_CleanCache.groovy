@@ -10,10 +10,10 @@ node {
   chosenJobs = allItems.findAll{job -> job.name =~ /$jobFilter/}
   // Do work and create the result table
   chosenJobs.each { job ->
-    if(!(job instanceof hudson.model.ExternalJob)) {
+    //if(!(job instanceof hudson.model.ExternalJob)) {
       println "HI:-> "
       println job.name
-    }
+  //  }
   }
 
 }
