@@ -5,7 +5,7 @@ node{
     
     repository = scm.getRepositories();
 
-    println(repository.GIT_BRANCH)
+    //println(repository.GIT_BRANCH)
     println(scm.GIT_BRANCH)
   }
 
