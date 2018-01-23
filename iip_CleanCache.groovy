@@ -6,10 +6,10 @@ node {
   hudsonInstance = hudson.model.Hudson.instance
   // Retrieve matching jobs
   allItems = hudsonInstance.items
-  jobFilter = env.JOB_NAME
-  chosenJobs = allItems.findAll{job -> job.name =~ /$jobFilter/}
+  //jobFilter = env.JOB_NAME
+  //chosenJobs = allItems.findAll{job -> job.name =~ /$jobFilter/}
   // Do work and create the result table
-  chosenJobs.each { job ->
+  allItems.each { job ->
     //if(!(job instanceof hudson.model.ExternalJob)) {
       println "HI:-> "
       println job.name
