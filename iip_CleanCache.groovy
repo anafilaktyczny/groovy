@@ -19,10 +19,10 @@
  */
 
 
-def cache_dir = params.SST_CACHE_DIR
-
 node {
-  
+  def cache_dir = params.SST_CACHE_DIR
+  def ret = "None"
+
   if ((!params.REMOVE_DUPLICATES) && (!params.REMOVE_OBSOLETES)){
     currentBuild.result = 'ABORTED'
     // Use error instead trowing new exception, by this way it`s possible
@@ -31,17 +31,11 @@ node {
   }
 
   stage('Checking directory.') {
-    def folder = new File( cache_dir )
-    if (!folder.exists()){
+    if (!fileExists(cache_dir)){
       println('Missing or invalid cache directory - exit.')
       currentBuild.result = 'ABORTED'
       error "Invalid sstate-cache directory."
     }
-  }
-
-
-  stage("bootstrap") {
-    
   }
 
   // Remove duplicate file by poky internal script.
@@ -61,7 +55,7 @@ node {
 
      }
     stage('Remove duplicates.') {
-        def ret = sh (returnStdout: true, script: "./scripts/sstate-cache-management.sh -d -y --cache-dir=${cache_dir}")
+        ret = sh (returnStdout: true, script: "./scripts/sstate-cache-management.sh -d -y --cache-dir=${cache_dir}")
         println(ret);
     }
   }
@@ -80,10 +74,10 @@ node {
             checkout([
               $class: 'GitSCM',
               doGenerateSubmoduleConfigurations: false,
-              branches: [[name: '*/master']],
+              branches: [[ name: params.SCM_BRANCH ]],
               userRemoteConfigs: [
-                [ credentialsId: Cred,
-                 url: "https://anafilaktyczny@github.com/anafilaktyczny/groovy.git"
+                [ credentialsId: params.CRED,
+                 url: params.SCM_REPO
                 ]
               ]
             ])
