@@ -31,6 +31,11 @@ node {
   }
 
   stage('Checking directory.') {
+    println("WTF:")
+    println(cache_dir)
+    println("WTF2:")
+    println(params.SST_CACHE_DIR)
+    
     if (!fileExists(cache_dir)){
       println('Missing or invalid cache directory: $cache_dir - exit.')
       currentBuild.result = 'ABORTED'
