@@ -3,12 +3,13 @@ node{
 
   stage("INfo"){
     
-    repository = scm.getRepositories();
+    //repository = scm.getRepositories();
 
-    println(repository[0].aa)
-    
+    scm.locations.each{
+      //For every Subversion-Location
+      println "Remotes: $ it.remote"
+    }
   }
-
 
   stage("bootstrap") {
     int sleep_duration = 5
