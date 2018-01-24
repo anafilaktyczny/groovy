@@ -7,7 +7,12 @@ node{
 
     scm.locations.each{
       //For every Subversion-Location
-      println "Remotes: $ it.remote"
+      println "Remotes: $it.remote"
+      println(it)
+      it.class.methods.each { aa ->
+        println "job method: ${aa.name}"
+      }
+
     }
   }
 
