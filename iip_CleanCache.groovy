@@ -4,11 +4,14 @@ node{
   stage("INfo"){
     
     //repository = scm.getRepositories();
+    scm.class.methods.each { aa ->
+        println "job method: ${aa.name}"
+    }
 
     scm.locations.each{
       //For every Subversion-Location
       println "Remotes: $it.remote"
-      println(it)
+    //  println(it)
       it.class.methods.each { aa ->
         println "job method: ${aa.name}"
       }
