@@ -32,7 +32,7 @@ node {
 
   stage('Checking directory.') {
     if (!fileExists(cache_dir)){
-      println('Missing or invalid cache directory - exit.')
+      println('Missing or invalid cache directory: $cache_dir - exit.')
       currentBuild.result = 'ABORTED'
       error "Invalid sstate-cache directory."
     }
