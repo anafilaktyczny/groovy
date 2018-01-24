@@ -10,7 +10,7 @@ node {
       } else {
 
         int sleep_duration = 5
-        retry(6) {
+        retry(1) {
           try {
             checkout([
               $class: 'GitSCM',
