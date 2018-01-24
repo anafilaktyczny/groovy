@@ -5,7 +5,7 @@ node{
     
     repository = scm.getRepositories();
 
-    println(repository.aa)
+    println(repository[0].aa)
     
   }
 
