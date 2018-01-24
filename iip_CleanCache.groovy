@@ -36,8 +36,9 @@ node {
     println("WTF2:")
     println(params.SST_CACHE_DIR)
 
-    //if (!fileExists(cache_dir)){
-    if (Files.isDirectory(Paths.get(cache_dir))) {
+    if (!fileExists($cache_dir)){
+
+    //if (Files.isDirectory(Paths.get(cache_dir))) {
       println('Missing or invalid cache directory: ${cache_dir} - exit.')
       println("WTF3:")
       println(cache_dir)
