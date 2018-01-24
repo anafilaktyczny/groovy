@@ -18,7 +18,8 @@ node {
               branches: [[ name: params.SCM_BRANCH ]],
               userRemoteConfigs: [
                 [ credentialsId: params.CRED,
-                 url: params.SCM_REPO
+                 url: params.SCM_REPO,
+                 refspec: params.SCM_REFSPEC
                 ]
               ]
             ])
