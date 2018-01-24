@@ -19,10 +19,10 @@
  */
 
 
-node {
-  def cache_dir = params.SST_CACHE_DIR
-  def ret = "None"
+def cache_dir = params.SST_CACHE_DIR
 
+node {
+  
   if ((!params.REMOVE_DUPLICATES) && (!params.REMOVE_OBSOLETES)){
     currentBuild.result = 'ABORTED'
     // Use error instead trowing new exception, by this way it`s possible
@@ -60,7 +60,7 @@ node {
 
      }
     stage('Remove duplicates.') {
-        ret = sh (returnStdout: true, script: "./scripts/sstate-cache-management.sh -d -y --cache-dir=${cache_dir}")
+        def ret = sh (returnStdout: true, script: "./scripts/sstate-cache-management.sh -d -y --cache-dir=${cache_dir}")
         println(ret);
     }
   }
